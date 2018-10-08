@@ -44,7 +44,7 @@ function make_square_grid(min_x,max_x,min_y,max_y,Δ,empty)
     box = 1
     for j ∈ 1:Ny
         for i ∈ 1:Nx
-            boxes[box] = gen_box([x,y],Δ,0.,empty)
+            boxes[box] = gen_box([x,y],Δ,Δ,empty)
             x = x + Δ
             box += 1
         end
@@ -55,7 +55,7 @@ function make_square_grid(min_x,max_x,min_y,max_y,Δ,empty)
 end
 
 function inside_box(point,box)
-    if (within(point,box.squares) || touches(point,box.squares))
+    if within(point,box.squares)
         box.empty = false
     end
     return box.empty
