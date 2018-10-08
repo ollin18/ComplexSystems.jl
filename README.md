@@ -29,3 +29,8 @@ Some results are the follow:
 
 ### 2D-Walker on a 10x10 box
 ![dla](http://olangle.w3.uvm.edu/random/initial.png)
+
+# Dynamical Systems
+
+### Generalized Lotka-Volterra (for 3 species)
+![lv3](http://olangle.w3.uvm.edu/random/all_alpha_1.5-h_0.01.png)
