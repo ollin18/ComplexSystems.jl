@@ -1,17 +1,29 @@
 using Distributions
 
+# walker type, with a position and if it is a wanderer
 mutable struct walker
     x::Float64
     y::Float64
     loner::Bool
 end
 
+"""
+    distance(walker1,walker2)
+
+Computes de distance between two walkers.
+"""
 function distance(w1::walker,w2::walker)
     on_x = (w1.x - w2.x)^2
     on_y = (w1.y - w2.y)^2
     sqrt(on_x+on_y)
 end
 
+"""
+    freeze(walker1,walker2,tol)
+
+Changes the loner state of a walker if it's distance
+to another one is < tol
+"""
 function freeze(w1::walker,w2::walker,tol::Float64)
     if w1.loner == false || w2.loner == false
         if distance(w1,w2) <= tol
@@ -20,16 +32,27 @@ function freeze(w1::walker,w2::walker,tol::Float64)
     end
 end
 
-#  We have to put here only the elements whose loner value is true but over
-#  the complete array (to speed up)
+"""
+    look_around(element,W,tol)
+
+Computes the distance of a walker to all the other walkers
+in an array of them and freezes them if their distance to
+the nearest one is < tol
+"""
 function look_around(element::Int64,W::Array,tol::Float64)
     not_me = W[1:end .!= element]
     map(x -> freeze(the_walkers[element],x,tol),not_me)
 end
 
-function random_walk(w::walker,min::Number,max::Number)
-    Δx = rand([-0.1,0,0.1])
-    Δy = rand([-0.1,0,0.1])
+"""
+    random_walk(w,min,max)
+
+Makes a walker do a random walk inside a restriction box with
+length Δ
+"""
+function random_walk(w::walker,min::Number,max::Number,Δ=0.1)
+    Δx = rand([-Δ,0,Δ])
+    Δy = rand([-Δ,0,Δ])
     if w.x + Δx > min && w.x + Δx < max
         w.x = w.x + Δx;
     end

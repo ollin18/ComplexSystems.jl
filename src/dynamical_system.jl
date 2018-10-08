@@ -7,31 +7,11 @@
 ##     09 / 23 / 2018									         ##
 ## =========================== ## ## =========================== ##
 
-# Remember that the iterative Euler's method form is the follow
-# y_t = y_{t-1} + h f(x_{t-1-,y_{t-1})
-# So we must provide a function
+"""
+    euler(x,h;fun,kwargs...)
 
-# Since version 1.0 we need to import Pkg to manage packages outside pkg
-# environment.
-
-# The following will install the packages needed if you don't already have them
-# and then import them. It might take a while to precompile everything.
-#  using Pkg
-
-#  packages = [:DifferentialEquations, :DataFrames, :GLM,
-#              :Statistics, :Plots, :PyPlot, :StatPlots]
-#  installed = [key for key in keys(Pkg.installed())]
-#  strpackages = @. string(packages)
-#  uninstalled = setdiff(strpackages,installed)
-#
-#  map(Pkg.add,uninstalled)
-#  for package ∈ packages
-#      @eval using $package
-#  end
-#
-#  #  gr()
-#  pyplot()
-
+Uses Euler method to integrate function fun at x with step h
+"""
 function euler(x,h;fun=lv,kwargs...)
     try
         f = fun(x;kwargs...)
@@ -42,6 +22,11 @@ function euler(x,h;fun=lv,kwargs...)
     end
 end
 
+"""
+    heun(x,h;fun,kwargs...)
+
+Uses Heun method to integrate function fun at x with step h
+"""
 function heun(x,h;fun=lv,kwargs...)
     try
         y1 = euler(x,h;fun=fun,kwargs...)
@@ -56,11 +41,22 @@ function heun(x,h;fun=lv,kwargs...)
     end
 end
 
+"""
+    lv(x;a,b,c,d)
+
+Classical 2D Lotka-Volterra model
+"""
 function lv(x;a,b,c,d)
     y = [a*x[1]-b*x[1]*x[2],c*x[1]*x[2]-d*x[2]]
     y
 end
 
+"""
+    lot3(x;α)
+
+Generalized Lotka-Volterra model for 3 species as in
+Flake's The Computational Beauty of Nature book.
+"""
 function lot3(x;α=0.75)
     A = [0.5 0.5 0.1; -0.5 -0.1 0.1; α 0.1 0.1]
     y = zeros(length(x))
@@ -70,6 +66,12 @@ function lot3(x;α=0.75)
     y
 end
 
+"""
+    my_integrator(ti,tf,h,y0;fun,algo,kwargs...)
+
+Integrates a function fun from ti to tf with step h and initial condition
+y0 with algorithm algo.
+"""
 function my_integrator(ti,tf,h,y0;fun=lv,algo=euler,kwargs...)
     t = ti:h:tf |> collect
     y = zeros(length(t),length(y0))
