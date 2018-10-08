@@ -1,0 +1,11 @@
+julia 0.7
+DifferentialEquations
+DataFrames
+Distributions
+GLM
+Statistics
+Plots
+Pyplot
+GR
+StatPlots
+LibGeos
