@@ -2,15 +2,15 @@
 Some  complex system implementations, mostly for CS302 UVM
 
 This is a compilation for the Modeling Complex Systems course.
-| Lecturer: Laurent Hébert-Dufresne
-| Student: Ollin Demian Langle Chimal
+> Lecturer: Laurent Hébert-Dufresne
+> Student: Ollin Demian Langle Chimal
 
 Some results are the follow:
 
 # L-systems:
 
 ### Sierpinski Triangle
-![Sierpinksi](http://olangle.w3.uvm.edu/random/lsystem.gif)
+![Sierpinksi](http://olangle.w3.uvm.edu/random/sierpinski.gif)
 
 ### Penrose Pentagon
 ![Penrose](http://olangle.w3.uvm.edu/random/penrose.gif)
