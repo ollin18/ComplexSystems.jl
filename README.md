@@ -3,6 +3,7 @@ Some  complex system implementations, mostly for CS302 UVM
 
 This is a compilation for the Modeling Complex Systems course.
 > Lecturer: Laurent Hébert-Dufresne
+>
 > Student: Ollin Demian Langle Chimal
 
 Some results are the follow:
