@@ -61,6 +61,38 @@ function random_walk(w::walker,min::Number,max::Number,Δ=0.1)
     end
 end
 
+"""
+    walker_set(count,min_box,max_box)
+
+Gives a set of walkers  bounded in a box
+"""
+function walker_set(count::Int64,min_box,max_box)
+    the_walkers = [walker(round(rand(Uniform(min_box,max_box));digits=1),
+                          round(rand(Uniform(min_box,max_box));digits=1),
+                          1) for i in 1:count]
+    return the_walkers
+end
+
+"""
+dla(walker_array,tol,min_box,max_box;max_no_mov)
+
+Performs a DLA on a set of walkers in a bounding box,
+makes them stop moving if their distance < tol to a
+non-moving walker. Stops when you get the maximum of
+non-moving ones of desire
+"""
+function dla(walker_array::Array,tol,min_box,max_box;max_no_mov=0)
+    while sum([x.loner for x ∈ walker_array]) > max_no_mov
+        global the_movers = findall(x -> x.loner == true, walker_array);
+        for i ∈ the_movers
+            look_around(i,walker_array,tol)
+        end
+        the_movers = findall(x -> x.loner == true, the_walkers);
+        map(x -> random_walk(walker_array[x],min_box,max_box),the_movers);
+    end
+    walker_array
+end
+
 ## Main program
 #  the_walkers = [walker(round(rand(Uniform(-5,5));digits=1),
 #                        round(rand(Uniform(-5,5));digits=1),
