@@ -1,6 +1,6 @@
 #  __precompile__()
 module ComplexSystems
-    #  using DifferentialEquations
+    using DifferentialEquations
     using DataFrames
     using Distributions
     using GLM
@@ -10,6 +10,19 @@ module ComplexSystems
     using GR
     using StatPlots
     using LibGeos
+
+    # An AbstractType with an empty property
+    mutable struct box_2d
+        squares::Polygon
+        empty::Bool
+    end
+
+    # walker type, with a position and if it is a wanderer
+    mutable struct walker
+        x::Float64
+        y::Float64
+        loner::Bool
+    end
 
     include("diffusion_limited_aggregation.jl")
     include("dynamical_system.jl")

@@ -1,11 +1,11 @@
 using Distributions
 
 # walker type, with a position and if it is a wanderer
-mutable struct walker
-    x::Float64
-    y::Float64
-    loner::Bool
-end
+#  mutable struct walker
+#      x::Float64
+#      y::Float64
+#      loner::Bool
+#  end
 
 """
     distance(walker1,walker2)

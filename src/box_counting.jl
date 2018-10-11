@@ -10,10 +10,10 @@
 using LibGEOS
 
 # An AbstractType with an empty property
-mutable struct box_2d
-    squares::Polygon
-    empty::Bool
-end
+#  mutable struct box_2d
+#      squares::Polygon
+#      empty::Bool
+#  end
 
 """
     gen_box(start,Δx,Δy,empty)
