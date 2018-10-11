@@ -1,5 +1,4 @@
 julia 0.7
-DifferentialEquations
 DataFrames
 Distributions
 GLM
