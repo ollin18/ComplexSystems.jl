@@ -1,0 +1,5 @@
+authors = ["Ollin Langle <ollin.langle@ciencias.unam.mx>"]
+name = "ComplexSystems"
+uuid = "d8ae8402-3b0d-534f-9778-63f2244f596b"
+repo = "https://github.com/ollin18/ComplexSystems.jl.git"
+version = "0.1.0"
