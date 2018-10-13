@@ -4,7 +4,7 @@ module ComplexSystems
     using Distributions
     using GLM
     using Statistics
-    using LibGeos
+    using LibGEOS
 
     # An AbstractType with an empty property
     mutable struct box_2d
