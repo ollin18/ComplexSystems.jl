@@ -1,14 +1,9 @@
-#  __precompile__()
+__precompile__()
 module ComplexSystems
-    using DifferentialEquations
     using DataFrames
     using Distributions
     using GLM
     using Statistics
-    using Plots
-    using Pyplot
-    using GR
-    using StatPlots
     using LibGeos
 
     # An AbstractType with an empty property
