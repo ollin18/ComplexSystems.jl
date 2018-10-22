@@ -37,3 +37,8 @@ Some results are the follow:
 
 ### Generalized Lotka-Volterra (for 3 species)
 ![lv3](http://olangle.w3.uvm.edu/random/all_alpha_1.5-h_0.01.png)
+
+# Cellular Automata
+
+### 3 site Sznajd Model with p=0.5
+![sznajd](http://olangle.w3.uvm.edu/random/3s05.gif)
