@@ -42,3 +42,9 @@ Some results are the follow:
 
 ### 3 site Sznajd Model with p=0.5
 ![sznajd](http://olangle.w3.uvm.edu/random/3s05.gif)
+
+![sznajd1](http://olangle.w3.uvm.edu/random/sznajd.png)
+
+![sznajd](http://olangle.w3.uvm.edu/random/2sitebotsznajd.png)
+
+![sznajd](http://olangle.w3.uvm.edu/random/3sitebotsznajd.png)
