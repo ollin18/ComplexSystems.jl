@@ -2,6 +2,7 @@
 
 using ComplexSystems
 using Plots
+using StatsBase
 
 avg_p_1 = Array{Tuple{Float64,Float64}}(undef,11)
 for p in 0:0.1:1
