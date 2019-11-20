@@ -111,6 +111,6 @@ function cambridge_analytica(population,p)
     coord = [tuple(i,j) for i in 1:size(population)[1] for j in 1:size(population)[2] if (population[i,j]!=1 && abs(avg_friends_opinion(population,i,j))!=1)]
     hm = Int(ceil(length(coord)*p))
     selected = sample(coord,hm;replace=true)
-    map(x -> population[x[1],x[2]]=1,selected)
+    map(x -> convince_2_site(population,x[1],x[2]),selected)                                                                                                                                       
     population
 end
