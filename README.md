@@ -1,5 +1,9 @@
 [![Build Status](https://travis-ci.org/ollin18/ComplexSystems.jl.svg?branch=master)](https://travis-ci.org/ollin18/ComplexSystems.jl)
 
+# Installation
+
+] add https://github.com/ollin18/ComplexSystems.jl
+
 # ComplexSystems.jl
 
 Some  complex system implementations, mostly for CS302 UVM
