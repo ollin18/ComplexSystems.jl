@@ -21,10 +21,10 @@ Some results you can get:
 ### Spikes
 ![Spikes](http://olangle.w3.uvm.edu/random/spikes.gif)
 
-### Own figure
+### A heart
 ![Heart](http://olangle.w3.uvm.edu/random/lsystem.gif)
 
-### Building the *heart*
+### Building of a *heart*
 ![BHeart](http://olangle.w3.uvm.edu/random/fast_build.gif)
 
 # Diffusion Limited Aggregation
